@@ -6,7 +6,6 @@ function cambia_unidades(valor, id) {
         document.lasUnidades.unid_pie.value = "";
         document.lasUnidades.unid_yarda.value = "";
     }
-
     if (id === "metro") {
         document.lasUnidades.unid_pulgada.value = 39.3701 * valor;
         document.lasUnidades.unid_pie.value = 3.28084 * valor;
