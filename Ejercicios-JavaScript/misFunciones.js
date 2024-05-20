@@ -1,25 +1,47 @@
 function cambia_unidades(valor, id) {
     if (isNaN(valor)) {
-        alert("Se ingresó un valor inválido " + id);
+        alert("Se ingresó un valor inválido en " + id);
         document.lasUnidades.unid_metro.value = "";
         document.lasUnidades.unid_pulgada.value = "";
         document.lasUnidades.unid_pie.value = "";
         document.lasUnidades.unid_yarda.value = "";
+        return;
     }
+
+    valor = parseFloat(valor);
+
+    var metro, pulgada, pie, yarda;
+
     if (id === "metro") {
-        document.lasUnidades.unid_pulgada.value = 39.3701 * valor;
-        document.lasUnidades.unid_pie.value = 3.28084 * valor;
-        document.lasUnidades.unid_yarda.value = 1.09361 * valor;
+        metro = valor;
+        pulgada = valor * 39.3701;
+        pie = valor * 3.28084;
+        yarda = valor * 1.09361;
     } else if (id === "pulgada") {
-        document.lasUnidades.unid_metro.value = 0.0254 * valor;
-        document.lasUnidades.unid_pie.value = 0.0833333 * valor;
-        document.lasUnidades.unid_yarda.value = 0.0277778 * valor;
+        metro = valor * 0.0254;
+        pulgada = valor;
+        pie = valor * 0.0833333;
+        yarda = valor * 0.0277778;
+    } else if (id === "pie") {
+        metro = valor * 0.3048;
+        pulgada = valor * 12;
+        pie = valor;
+        yarda = valor * 0.333333;
     } else if (id === "yarda") {
-        document.lasUnidades.unid_metro.value = 0.9144 * valor;
-        document.lasUnidades.unid_pulgada.value = 36 * valor;
-        document.lasUnidades.unid_pie.value = 3 * valor;
+        metro = valor * 0.9144;
+        pulgada = valor * 36;
+        pie = valor * 3;
+        yarda = valor;
+    } else {
+        return;
     }
+
+    document.lasUnidades.unid_metro.value = metro.toFixed(4);
+    document.lasUnidades.unid_pulgada.value = pulgada.toFixed(4);
+    document.lasUnidades.unid_pie.value = pie.toFixed(4);
+    document.lasUnidades.unid_yarda.value = yarda.toFixed(4);
 }
+
 
 function convertirGR(id) {
     var valor, resultado;
