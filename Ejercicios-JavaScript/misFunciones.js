@@ -59,3 +59,32 @@ function convertirGR(id) {
 
     document.getElementById(id === "grados" ? "radianes" : "grados").value = resultado.toFixed(4);
 }
+
+function calcularSuma() {
+    var num1 = Number(document.getElementById("sum_num1").value);
+    var num2 = Number(document.getElementById("sum_num2").value);
+    var total = num1 + num2;
+    document.getElementById("sum_total").innerHTML = total;
+}
+
+function calcularResta() {
+    var num1 = Number(document.getElementById("res_num1").value);
+    var num2 = Number(document.getElementById("res_num2").value);
+    var total = num1 - num2;
+    document.getElementById("res_total").innerHTML = total;
+}
+
+function calcularMultiplicacion() {
+    var num1 = Number(document.getElementById("mul_num1").value);
+    var num2 = Number(document.getElementById("mul_num2").value);
+    var total = num1 * num2;
+    document.getElementById("mul_total").innerHTML = total;
+}
+
+function calcularDivision() {
+    var num1 = Number(document.getElementById("div_num1").value);
+    var num2 = Number(document.getElementById("div_num2").value);
+    var total = num1 / num2;
+    document.getElementById("div_total").innerHTML = total;
+}
+
