@@ -13,36 +13,32 @@
     <h1>Operaciones Matemáticas</h1>
     <form class="operacionesMat">
         <p>
-            <input id="sum_num1" type="text" name="sum_num1">
+            <input id="sum_num1" type="text" name="sum_num1" oninput="calcularSuma()">
             +
-            <input id="sum_num2" type="text" name="sum_num2">
+            <input id="sum_num2" type="text" name="sum_num2" oninput="calcularSuma()">
             =
             <input id="sum_total" type="text" name="sum_total" readonly>
-            <button type="button" onclick="calcularSuma()">Calcular Suma</button>
         </p>
         <p>
-            <input id="res_num1" type="text" name="res_num1">
+            <input id="res_num1" type="text" name="res_num1" oninput="calcularResta()">
             -
-            <input id="res_num2" type="text" name="res_num2">
+            <input id="res_num2" type="text" name="res_num2" oninput="calcularResta()">
             =
             <input id="res_total" type="text" name="res_total" readonly>
-            <button type="button" onclick="calcularResta()">Calcular Resta</button>
         </p>
         <p>
-            <input id="mul_num1" type="text" name="mul_num1">
+            <input id="mul_num1" type="text" name="mul_num1" oninput="calcularMultiplicacion()">
             x
-            <input id="mul_num2" type="text" name="mul_num2">
+            <input id="mul_num2" type="text" name="mul_num2" oninput="calcularMultiplicacion()">
             =
-            <input id="mul_total" type="text" name="mul_total" readonly>
-            <button type="button" onclick="calcularMultiplicacion()">Calcular Multiplicación</button>
+            <input id="mul_total" type="text" name="mul_total" disabled>
         </p>
         <p>
-            <input id="div_num1" type="text" name="div_num1">
+            <input id="div_num1" type="text" name="div_num1" oninput="calcularDivision()">
             /
-            <input id="div_num2" type="text" name="div_num2">
+            <input id="div_num2" type="text" name="div_num2" oninput="calcularDivision()">
             =
-            <input id="div_total" type="text" name="div_total" readonly>
-            <button type="button" onclick="calcularDivision()">Calcular División</button>
+            <input id="div_total" type="text" name="div_total" disabled>
         </p>
     </form>
 </div>
