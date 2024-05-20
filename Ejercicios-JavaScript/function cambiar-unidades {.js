@@ -21,3 +21,19 @@ function cambia_unidades(valor, id) {
         document.lasUnidades.unid_pie.value = 3 * valor;
     }
 }
+
+function convertirGR(id) {
+    var valor, resultado;
+
+    if (id === "grados") {
+        valor = parseFloat(document.getElementById("grados").value);
+        resultado = valor * Math.PI / 180;
+    } else if (id === "radianes") {
+        valor = parseFloat(document.getElementById("radianes").value);
+        resultado = valor * 180 / Math.PI;
+    } else {
+        throw new Error("Identificador no válido");
+    }
+
+    document.getElementById(id === "grados" ? "radianes" : "grados").value = resultado.toFixed(4);
+}
