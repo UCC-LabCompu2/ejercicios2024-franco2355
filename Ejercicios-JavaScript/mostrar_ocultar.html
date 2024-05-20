@@ -1,31 +1,50 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Mostrar/Ocultar Div</title>
+    <title>Operaciones Matemáticas</title>
     <link href="https://fonts.googleapis.com/css?family=Inknut+Antiqua" rel="stylesheet">
     <link href="miEstilo.css" type="text/css" rel="stylesheet">
-    <script type="text/javascript" src="misfunciones.js"></script>
+    <script type="text/javascript" src="misFunciones.js"></script>
 </head>
-<body>
+<body class="body-num">
 
-<h1> Mostrar/Ocultar Div </h1>
-<form>
-    <!--Es importante que los 2 radio button tengan el mismo name, porque eso les hace pertenecer a un mismo grupo-->
-    <!--Si un radio button se selecciona, el otro se deselecciona-->
-    <p>
-        <input id="mostrarDiv" type="radio" name="rad_mostrar-ocultar" value="val_mostrar" onclick="mostrar_ocultar(this.value)">
-        <label for="mostrarDiv"> Mostrar Div </label>
-    </p>
-    <p>
-        <input id="ocultarDiv" type="radio" name="rad_mostrar-ocultar" value="val_ocultar" onclick="mostrar_ocultar(this.value)">
-        <label for="ocultarDiv"> Ocultar Div </label>
-    </p>
-</form>
-
-<div id="divMO" class="color-div">
-    <p>Este DIV contiene información que en ciertas ocasiones se desea ocultar.</p>
+<div class="centrado div-conver">
+    <h1>Operaciones Matemáticas</h1>
+    <form class="operacionesMat">
+        <p>
+            <input id="sum_num1" type="text" name="sum_num1">
+            +
+            <input id="sum_num2" type="text" name="sum_num2">
+            =
+            <input id="sum_total" type="text" name="sum_total" readonly>
+            <button type="button" onclick="calcularSuma()">Calcular Suma</button>
+        </p>
+        <p>
+            <input id="res_num1" type="text" name="res_num1">
+            -
+            <input id="res_num2" type="text" name="res_num2">
+            =
+            <input id="res_total" type="text" name="res_total" readonly>
+            <button type="button" onclick="calcularResta()">Calcular Resta</button>
+        </p>
+        <p>
+            <input id="mul_num1" type="text" name="mul_num1">
+            x
+            <input id="mul_num2" type="text" name="mul_num2">
+            =
+            <input id="mul_total" type="text" name="mul_total" readonly>
+            <button type="button" onclick="calcularMultiplicacion()">Calcular Multiplicación</button>
+        </p>
+        <p>
+            <input id="div_num1" type="text" name="div_num1">
+            /
+            <input id="div_num2" type="text" name="div_num2">
+            =
+            <input id="div_total" type="text" name="div_total" readonly>
+            <button type="button" onclick="calcularDivision()">Calcular División</button>
+        </p>
+    </form>
 </div>
-
 </body>
 </html>
