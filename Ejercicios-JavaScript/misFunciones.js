@@ -1,6 +1,6 @@
 function cambia_unidades(valor, id) {
     if (isNaN(valor)) {
-        alert("Se ingresó un valor inválido en " + id);
+        alert("Se ingreso un valor invalido en " + id);
         document.lasUnidades.unid_metro.value = "";
         document.lasUnidades.unid_pulgada.value = "";
         document.lasUnidades.unid_pie.value = "";
