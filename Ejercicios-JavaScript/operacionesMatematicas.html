@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <title>Operaciones Matemáticas</title>
     <link href="https://fonts.googleapis.com/css?family=Inknut+Antiqua" rel="stylesheet">
-    <link href="miEstilo.css" type="text/css" rel="stylesheet">
     <script type="text/javascript" src="misFunciones.js"></script>
 </head>
 <body class="body-num">
@@ -13,32 +12,32 @@
     <h1>Operaciones Matemáticas</h1>
     <form class="operacionesMat">
         <p>
-            <input id="nums1" type="text" name="sum_num1">
+            <input id="sum_num1" type="text" name="sum_num1" oninput="calcularSuma()">
             +
-            <input id="nums2" type="text" name="sum_num2">
+            <input id="sum_num2" type="text" name="sum_num2" oninput="calcularSuma()">
             =
-            <input id="totalS" type="text" name="sum_total">
+            <span id="sum_total" name="sum_total"></span>
         </p>
         <p>
-            <input id="numr1" type="text" name="res_num1">
+            <input id="res_num1" type="text" name="res_num1" oninput="calcularResta()">
             -
-            <input id="numr2" type="text" name="res_num2">
+            <input id="res_num2" type="text" name="res_num2" oninput="calcularResta()">
             =
-            <input id="totalR" type="text" name="res_total">
+            <span id="res_total" name="res_total"></span>
         </p>
         <p>
-            <input id="numm1" type="text" name="mul_num1">
+            <input id="mul_num1" type="text" name="mul_num1" oninput="calcularMultiplicacion()">
             x
-            <input id="numm2" type="text" name="mul_num2">
+            <input id="mul_num2" type="text" name="mul_num2" oninput="calcularMultiplicacion()">
             =
-            <input id="totalM" type="text" name="mul_total">
+            <span id="mul_total" name="mul_total"></span>
         </p>
         <p>
-            <input id="numd1" type="text" name="div_num1">
+            <input id="div_num1" type="text" name="div_num1" oninput="calcularDivision()">
             /
-            <input id="numd2" type="text" name="div_num2">
+            <input id="div_num2" type="text" name="div_num2" oninput="calcularDivision()">
             =
-            <input id="totalD" type="text" name="div_total">
+            <span id="div_total" name="div_total"></span>
         </p>
     </form>
 </div>
