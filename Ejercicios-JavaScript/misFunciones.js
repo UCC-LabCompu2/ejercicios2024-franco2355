@@ -1,10 +1,10 @@
 function cambia_unidades(valor, id) {
     if (isNaN(valor)) {
         alert("Se ingreso un valor invalido en " + id);
-        document.lasUnidades.unid_metro.value = "";
-        document.lasUnidades.unid_pulgada.value = "";
-        document.lasUnidades.unid_pie.value = "";
-        document.lasUnidades.unid_yarda.value = "";
+        document.getElementById("metro").value = "";
+        document.getElementById("pulgada").value = "";
+        document.getElementById("pie").value = "";
+        document.getElementById("yarda").value = "";
         return;
     }
 
@@ -36,11 +36,12 @@ function cambia_unidades(valor, id) {
         return;
     }
 
-    document.lasUnidades.unid_metro.value = metro.toFixed(4);
-    document.lasUnidades.unid_pulgada.value = pulgada.toFixed(4);
-    document.lasUnidades.unid_pie.value = pie.toFixed(4);
-    document.lasUnidades.unid_yarda.value = yarda.toFixed(4);
+    document.getElementById("metro").value = metro.toFixed(4);
+    document.getElementById("pulgada").value = pulgada.toFixed(4);
+    document.getElementById("pie").value = pie.toFixed(4);
+    document.getElementById("yarda").value = yarda.toFixed(4);
 }
+
 
 
 function convertirGR(id) {
