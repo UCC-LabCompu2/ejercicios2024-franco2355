@@ -44,6 +44,9 @@ function cambia_unidades(valor, id) {
 
 
 
+
+
+
 function convertirGR(id) {
     var valor, resultado;
 
@@ -59,6 +62,13 @@ function convertirGR(id) {
 
     document.getElementById(id === "grados" ? "radianes" : "grados").value = resultado.toFixed(4);
 }
+
+
+
+
+
+
+
 
 function calcularSuma() {
     var num1 = Number(document.getElementById("sum_num1").value);
@@ -88,3 +98,28 @@ function calcularDivision() {
     document.getElementById("div_total").innerHTML = total;
 }
 
+
+
+
+
+
+
+function cargarWeb() {
+  var cant, unidad, urlComp;
+
+  cant = document.getElementById("distancia").value;
+  unidad = document.getElementsByName("unidades")[0].value;
+
+  urlComp = "segundaweb.html#" + cant + "#" + unidad;
+  window.open(urlComp);
+}
+
+function cargarResultado() {
+  var urlComp, can, un;
+
+  urlComp = window.location.href.split("/")[5];
+  can = urlComp.split("#")[1];
+  un = urlComp.split("#")[2];
+
+  document.getElementById("dist").value = can + " " + un;
+}
