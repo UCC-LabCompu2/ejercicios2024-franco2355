@@ -1,29 +1,46 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Conversor de Unidades</title>
-    <link href="https://fonts.googleapis.com/css?family=Inknut+Antiqua" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Inknus+Antiqua" rel="stylesheet">
     <link href="miEstilo.css" type="text/css" rel="stylesheet">
     <script type="text/javascript" src="misFunciones.js"></script>
 </head>
-<body class="body-num" onload="alert('Hola Mundo!')">
-
+<body class="body-num" onload="cargarResultado()">
 <div class="centrado div-conver">
     <h1>Conversor de Unidades</h1>
     <form>
         <p>
-            <label for="distancia"> Distancia</label> = <input id="distancia" type="text" name="inp_distancia">
-            <select name="unidades">
-                <option value="metros">Metros</option>
-                <option value="yardas">Yardas</option>
-                <option value="pies">Pies</option>
-                <option value="pulgadas">Pulgadas</option>
+            Unidad de origen:
+            <select id="sel_unidad_origen" name="sel_unidad_origen">
+                <option value="m">Metros</option>
+                <option value="km">Kilómetros</option>
+                <option value="cm">Centímetros</option>
+                <option value="mm">Milímetros</option>
             </select>
-            <button type="button" onclick="cargarWeb()">Segunda Web!</button>
+        </p>
+        <p>
+            Valor:
+            <input id="val_origen" type="text" name="val_origen">
+        </p>
+        <p>
+            Unidad de destino:
+            <select id="sel_unidad_destino" name="sel_unidad_destino">
+                <option value="m">Metros</option>
+                <option value="km">Kilómetros</option>
+                <option value="cm">Centímetros</option>
+                <option value="mm">Milímetros</option>
+            </select>
+        </p>
+        <p>
+            <button type="button" onclick="convertir()">Convertir</button>
+        </p>
+        <p>
+            La distancia ingresada es:
+            <input id="dist" type="text" name="inp_dist" disabled>
         </p>
     </form>
 </div>
-
 </body>
 </html>
