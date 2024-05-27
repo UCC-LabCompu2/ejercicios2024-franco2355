@@ -78,6 +78,13 @@ function convertirGR(id) {
     document.getElementById(id === "grados" ? "radianes" : "grados").value = resultado.toFixed(4);
 }
 
+function mostrar_ocultar (valorMO){
+    if (valorMO=="val_mostrar"){
+        document.getElementById("divMO").style.display='block';
+    } else if (valorMO=="val_ocultar"){
+        document.getElementById("divMO").style.display='none';
+    }
+}
 
 
 function dibujarCirCuad() {
