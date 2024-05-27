@@ -80,7 +80,19 @@ function convertirGR(id) {
 
 
 
-
+function dibujarCirCuad() {
+    var canvas = document.getElementById("myCanvas");
+    var ctx = canvas.getContext("2d");
+    var xMax = canvas.width;
+    var yMax = canvas.height;
+    var margen = 5;
+    ctx.fillStyle = "#333899";
+    ctx.fillRect(x = 0 + margen, y = yMax - 40 - margen, w = 40, h = 40);
+    ctx.arc(x = xMax / 2, y = yMax / 2, radius = 20, startAngle = 0, endAngle = 2 * Math.PI);
+    ctx.stroke();
+    ctx.fillStyle = "#333899";
+    ctx.fill();
+}
 
 
 
