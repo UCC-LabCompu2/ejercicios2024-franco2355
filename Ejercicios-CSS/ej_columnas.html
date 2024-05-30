@@ -4,27 +4,32 @@
     <meta charset="UTF-8">
     <title>Ejercicio Columnas</title>
     <style>
+        #tituloPrincipal {
+            color: #006eff;
+        }
+        
         .tituloNoticia {
             font-size: 30px;
-            front-weight: 200;
         }
-        body{
-            front-family: Arial, Helvetica, sans-serif;
+        
+        body {
+            font-family: Tahoma;
         }
-        head:hover{
-            background-color: black;
-        }
+
         article {
-            font-family: Arial, sans-serif;
-            column-count: 2; 
-            column-gap: 50px; 
-            margin: 50px;
+            column-count: 2;
+            column-gap: 20px;
+        }
+        
+        .tituloNoticia {
+            break-inside: avoid;
         }
     </style>
 </head>
 <body>
+<!--Cree los estilos CSS necesarios para que el texto se visualice en 2 columnas-->
 <header>
-    <h1 id="tituloPrincipal" style="color: blue;">Diario On-line</h1>
+    <h1 id="tituloPrincipal">Diario On-line</h1>
 </header>
 <a href="ej_leyes.html" target="_blank">Legal</a>
 <section>
@@ -98,3 +103,4 @@
 
 </body>
 </html>
+
