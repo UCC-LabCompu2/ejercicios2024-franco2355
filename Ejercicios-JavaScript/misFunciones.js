@@ -181,7 +181,9 @@ function cargarResultado() {
     document.getElementById("dist").value = can + " " + un;
 }
 
-
+/**
+ * Dibuja un cuadrado y un círculo en un elemento canvas.
+ */
 function dibujarCirCuad() {
     var canvas = document.getElementById("myCanvas");
     var ctx = canvas.getContext("2d");
@@ -199,6 +201,9 @@ function dibujarCirCuad() {
     ctx.fill();
 }
 
+/**
+ * Dibuja en el canvas según la posición del evento de mouse.
+ */
 var bandera = false;
 function dibujar(event) {
     var canvas = document.getElementById("canvasAdibujar");
@@ -216,7 +221,9 @@ function dibujar(event) {
     }
 }
 
-
+/**
+ * Limpia el canvas.
+ */
 function limpiarCanvas() {
     var canvas = document.getElementById("canvasAdibujar");
     var ctx = canvas.getContext("2d");
@@ -224,6 +231,9 @@ function limpiarCanvas() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 }
 
+/**
+ * Dibuja un cuadrado de línea en el canvas.
+ */
 let dibujarCuadriculado = () => {
      canvas = document.getElementById("myCanvas");
      ctx = canvas.getContext("2d");
@@ -278,6 +288,9 @@ let dibujarCuadriculado = () => {
     }
 };
 
+/**
+ * Dibuja una imagen en el canvas en una posición específica.
+ */
 function dibujarImagen(posX, posY) {
     var canvas = document.getElementById("myCanvas");
     var ctx = canvas.getContext("2d");
@@ -290,6 +303,9 @@ function dibujarImagen(posX, posY) {
     }
 }
 
+/**
+ * Dibuja una imagen en el canvas en una posición específica con validación.
+ */
 let dibujarImagen = (posX, posY) => {
     const canvas = document.getElementById("myCanvas");
     const ctx = canvas.getContext("2d");
@@ -299,7 +315,6 @@ let dibujarImagen = (posX, posY) => {
     img.src = "images/auto.png";
 
     canvas.width = canvas.width;
-
 
     img.onload = function (){
         const width = this.naturalWidth;
@@ -316,18 +331,25 @@ let dibujarImagen = (posX, posY) => {
     }
 }
 
+/**
+ * Abre un diálogo modal.
+ */
 let openDialog = () => {
     const dialog = document.getElementById("myDialog");
     dialog.showModal();
 }
 
-
+/**
+ * Cierra un diálogo modal.
+ */
 let closeDialog = () => {
     const dialog = document.getElementById("myDialog");
     dialog.close();
 }
 
-
+/**
+ * Anima un auto moviéndolo en el canvas.
+ */
 let animarAuto = () => {
     x=0; 
     dx=2;
@@ -349,23 +371,34 @@ let animarAuto = () => {
 }
 
 var intervalId;
+/**
+ * Detiene la animación del auto.
+ */
 let detenerAuto = () => {
     console.log("Se detuvo el auto")
     clearInterval(intervalId); 
 }
 
+/**
+ * Comienza la animación del auto.
+ */
 let comenzarAnimacion = () => {
     console.log("Se llamo a comenzar animacion")
     intervalId = setInterval(animarAuto, 10);
     setTimeout(detenerAuto, 4000);
 }
 
+/**
+ * Anima un nuevo auto 
+ */
 let animarNuevo = () => {
   setTimeout(cancelarAnimacion, 4000);
   requestAnimationFrame(animarAuto);
 }
 
+/**
+ * Cancela la animación del auto
+ */
 let cancelarAnimacion = () => {
   cancelAnimationFrame(animationId); 
 };
-
