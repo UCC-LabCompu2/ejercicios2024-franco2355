@@ -182,5 +182,46 @@ function cargarResultado() {
 }
 
 
+function dibujarCirCuad() {
+    var canvas = document.getElementById("myCanvas");
+    var ctx = canvas.getContext("2d");
+    var xMax = canvas.width;
+    var yMax = canvas.height;
+    var margen = 5;
+
+    ctx.fillStyle = "#333899";
+    ctx.fillRect(0 + margen, yMax - 40 - margen, 40, 40);
+
+    ctx.beginPath();
+    ctx.arc(xMax / 2, yMax / 2, 20, 0, 2 * Math.PI);
+    ctx.stroke();
+    ctx.fillStyle = "#8b4c99";
+    ctx.fill();
+}
+
+var bandera = false;
+function dibujar(event) {
+    var canvas = document.getElementById("canvasAdibujar");
+    var ctx = canvas.getContext("2d");
+
+    var posX = event.clientX - canvas.offsetLeft;
+    var posY = event.clientY - canvas.offsetTop;
+    console.log(posX, posY);
+
+    canvas.onmousedown = function () { bandera = true };
+    canvas.onmouseup = function () { bandera = false };
+
+    if (bandera) {
+        ctx.fillRect(posX, posY, 5, 5);
+    }
+}
+
+
+function limpiarCanvas() {
+    var canvas = document.getElementById("canvasAdibujar");
+    var ctx = canvas.getContext("2d");
+
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+}
 
 
