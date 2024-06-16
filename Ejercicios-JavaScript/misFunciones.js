@@ -224,4 +224,58 @@ function limpiarCanvas() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 }
 
+let dibujarCuadriculado = () => {
+     canvas = document.getElementById("myCanvas");
+     ctx = canvas.getContext("2d");
+
+     xmax = canvas.width;
+     ymax = canvas.height;
+     paso = 40;
+
+    ctx.strokeStyle = "#bbb9b9";
+    for (let i = paso; i < ymax; i += paso) {
+        ctx.beginPath();
+        ctx.moveTo(0, i);
+        ctx.lineTo(xmax, i);
+        ctx.stroke();
+        ctx.closePath();
+    }
+
+    for (let i = paso; i < xmax; i += paso) {
+        ctx.beginPath();
+        ctx.moveTo(i, 0);
+        ctx.lineTo(i, ymax);  
+        ctx.stroke();
+        ctx.closePath();
+    }
+
+    ctx.beginPath();
+    ctx.moveTo(0, ymax / 2);
+    ctx.lineTo(xmax, ymax / 2);
+    ctx.strokeStyle = "#000000";
+    ctx.stroke();
+    ctx.closePath();
+
+    ctx.beginPath();
+    ctx.moveTo(xmax / 2, 0);
+    ctx.lineTo(xmax / 2, ymax);
+    ctx.strokeStyle = "#000000";
+    ctx.stroke();
+    ctx.closePath();
+
+    let numx = -Math.floor(xmax / 40 / 2);
+    ctx.font = "10pt Verdana";
+    ctx.fillStyle = "blue";
+    for (let i = 0; i < xmax; i += 40) {
+        ctx.fillText(String(numx), i, ymax / 2 + 15); 
+        numx++;
+    }
+
+    let numy = -Math.floor(ymax / 40 / 2);
+    for (let i = 0; i < ymax; i += 40) {
+        ctx.fillText(String(numy), xmax / 2 + 5, i + 15); 
+        numy++;
+    }
+};
+
 
