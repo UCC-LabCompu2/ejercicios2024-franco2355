@@ -2,47 +2,47 @@
  * Convierte unidades de medida (metro, pulgada, pie, yarda) según el nombre dado y actualiza los valores en el formulario.
  */
 let cambiarUnidades = (nombre, valor) => {
-    let valMetro, valPulgada, valPie, valYarda
+    let valMetro, valPulgada, valPie, valYarda;
 
     if (valor.includes(",")) {
-        valor = valor.replace(",", ".")
+        valor = valor.replace(",", ".");
     }
 
     if (isNaN(valor)) {
-        alert("El valor ingresado no es un número!")
-        valMetro = ""
-        valPulgada = ""
-        valPie = ""
-        valYarda = ""
+        alert("El valor ingresado no es un número!");
+        valMetro = "";
+        valPulgada = "";
+        valPie = "";
+        valYarda = "";
     } else {
         if (nombre === "metro") {
-            valMetro = valor
-            valPulgada = valor * 39.3701
-            valPie = valor * 3.28084
-            valYarda = valor * 1.093
+            valMetro = valor;
+            valPulgada = valor * 39.3701;
+            valPie = valor * 3.28084;
+            valYarda = valor * 1.093;
         } else if (nombre === "pulgada") {
-            valMetro = valor * 0.0254
-            valPulgada = valor
-            valPie = valor * 0.08333
-            valYarda = valor * 0.02777
+            valMetro = valor * 0.0254;
+            valPulgada = valor;
+            valPie = valor * 0.08333;
+            valYarda = valor * 0.02777;
         } else if (nombre === "pie") {
-            valMetro = valor * 0.3048
-            valPulgada = valor * 12
-            valPie = valor
-            valYarda = valor * 0.33333
+            valMetro = valor * 0.3048;
+            valPulgada = valor * 12;
+            valPie = valor;
+            valYarda = valor * 0.33333;
         } else if (nombre === "yarda") {
-            valMetro = valor * 0.9144
-            valPulgada = valor * 36
-            valPie = valor * 3
-            valYarda = valor
+            valMetro = valor * 0.9144;
+            valPulgada = valor * 36;
+            valPie = valor * 3;
+            valYarda = valor;
         }
     }
 
-    document.getElementById('metro').value = Math.round(valMetro*100)/100
-    document.getElementById('pulgada').value = Math.round(valPulgada*100)/100
-    document.getElementById('pie').value = Math.round(valPie*100)/100
-    document.getElementById('yarda').value = Math.round(valYarda*100)/100
-}
+    document.getElementById('metro').value = Math.round(valMetro * 100) / 100;
+    document.getElementById('pulgada').value = Math.round(valPulgada * 100) / 100;
+    document.getElementById('pie').value = Math.round(valPie * 100) / 100;
+    document.getElementById('yarda').value = Math.round(valYarda * 100) / 100;
+};
 
 /**
  * Guarda la distancia y unidad seleccionadas en el LocalStorage y abre una nueva página.
@@ -90,10 +90,10 @@ function convertirGR(id) {
  * Muestra u oculta un div según el valor pasado.
  */
 function mostrar_ocultar(valorMO) {
-    if (valorMO=="val_mostrar"){
-        document.getElementById("divMO").style.display='block';
-    } else if (valorMO=="val_ocultar"){
-        document.getElementById("divMO").style.display='none';
+    if (valorMO == "val_mostrar") {
+        document.getElementById("divMO").style.display = 'block';
+    } else if (valorMO == "val_ocultar") {
+        document.getElementById("divMO").style.display = 'none';
     }
 }
 
@@ -213,8 +213,8 @@ function dibujar(event) {
     var posY = event.clientY - canvas.offsetTop;
     console.log(posX, posY);
 
-    canvas.onmousedown = function () { bandera = true };
-    canvas.onmouseup = function () { bandera = false };
+    canvas.onmousedown = function () { bandera = true; };
+    canvas.onmouseup = function () { bandera = false; };
 
     if (bandera) {
         ctx.fillRect(posX, posY, 5, 5);
@@ -235,12 +235,12 @@ function limpiarCanvas() {
  * Dibuja un cuadrado de línea en el canvas.
  */
 let dibujarCuadriculado = () => {
-     canvas = document.getElementById("myCanvas");
-     ctx = canvas.getContext("2d");
+    canvas = document.getElementById("myCanvas");
+    ctx = canvas.getContext("2d");
 
-     xmax = canvas.width;
-     ymax = canvas.height;
-     paso = 40;
+    xmax = canvas.width;
+    ymax = canvas.height;
+    paso = 40;
 
     ctx.strokeStyle = "#bbb9b9";
     for (let i = paso; i < ymax; i += paso) {
@@ -254,7 +254,7 @@ let dibujarCuadriculado = () => {
     for (let i = paso; i < xmax; i += paso) {
         ctx.beginPath();
         ctx.moveTo(i, 0);
-        ctx.lineTo(i, ymax);  
+        ctx.lineTo(i, ymax);
         ctx.stroke();
         ctx.closePath();
     }
@@ -277,13 +277,13 @@ let dibujarCuadriculado = () => {
     ctx.font = "10pt Verdana";
     ctx.fillStyle = "blue";
     for (let i = 0; i < xmax; i += 40) {
-        ctx.fillText(String(numx), i, ymax / 2 + 15); 
+        ctx.fillText(String(numx), i, ymax / 2 + 15);
         numx++;
     }
 
     let numy = -Math.floor(ymax / 40 / 2);
     for (let i = 0; i < ymax; i += 40) {
-        ctx.fillText(String(numy), xmax / 2 + 5, i + 15); 
+        ctx.fillText(String(numy), xmax / 2 + 5, i + 15);
         numy++;
     }
 };
@@ -300,7 +300,7 @@ function dibujarImagen(posX, posY) {
     canvas.width = canvas.width;
     img.onload = function() {
         ctx.drawImage(img, posX, posY);
-    }
+    };
 }
 
 /**
@@ -316,20 +316,20 @@ let dibujarImagen = (posX, posY) => {
 
     canvas.width = canvas.width;
 
-    img.onload = function (){
+    img.onload = function() {
         const width = this.naturalWidth;
         const height = this.naturalHeight;
         console.log(width, height);
 
-        if(posY<0 || posX<0){
+        if (posY < 0 || posX < 0) {
             openDialog();
-        }else if(canvas.width-width<posX || canvas.height-height<posY){
+        } else if (canvas.width - width < posX || canvas.height - height < posY) {
             openDialog();
-        }else{
+        } else {
             ctx.drawImage(img, posX, posY);
         }
-    }
-}
+    };
+};
 
 /**
  * Abre un diálogo modal.
@@ -337,7 +337,7 @@ let dibujarImagen = (posX, posY) => {
 let openDialog = () => {
     const dialog = document.getElementById("myDialog");
     dialog.showModal();
-}
+};
 
 /**
  * Cierra un diálogo modal.
@@ -345,60 +345,60 @@ let openDialog = () => {
 let closeDialog = () => {
     const dialog = document.getElementById("myDialog");
     dialog.close();
-}
+};
 
 /**
  * Anima un auto moviéndolo en el canvas.
  */
 let animarAuto = () => {
-    x=0; 
-    dx=2;
+    x = 0;
+    dx = 2;
     const canvas = document.getElementById("myCanvas");
     const ctx = canvas.getContext("2d");
 
     const img = new Image();
     img.src = "images/auto.png";
 
-    img.onload = function (){
+    img.onload = function() {
         canvas.width = canvas.width;
         ctx.drawImage(img, x, 100);
-    }
+    };
 
-    if(x>canvas.width){
-        x=0;
+    if (x > canvas.width) {
+        x = 0;
     }
-    x+=dx;
-}
+    x += dx;
+};
 
 var intervalId;
 /**
  * Detiene la animación del auto.
  */
 let detenerAuto = () => {
-    console.log("Se detuvo el auto")
-    clearInterval(intervalId); 
-}
+    console.log("Se detuvo el auto");
+    clearInterval(intervalId);
+};
 
 /**
  * Comienza la animación del auto.
  */
 let comenzarAnimacion = () => {
-    console.log("Se llamo a comenzar animacion")
+    console.log("Se llamo a comenzar animacion");
     intervalId = setInterval(animarAuto, 10);
     setTimeout(detenerAuto, 4000);
-}
+};
 
 /**
  * Anima un nuevo auto 
  */
 let animarNuevo = () => {
-  setTimeout(cancelarAnimacion, 4000);
-  requestAnimationFrame(animarAuto);
-}
+    setTimeout(cancelarAnimacion, 4000);
+    requestAnimationFrame(animarAuto);
+};
 
 /**
- * Cancela la animación del auto
+ * Cancela la animación del auto.
  */
 let cancelarAnimacion = () => {
-  cancelAnimationFrame(animationId); 
+    cancelAnimationFrame(animationId);
 };
